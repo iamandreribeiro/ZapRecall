@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 let mostrar = [];
 
-export default function Questions() {
+export default function Questions(props) {
     const [pergunta, setPergunta] = useState([]);
     const [resposta, setResposta] = useState([]);
 
@@ -16,9 +16,19 @@ export default function Questions() {
     }
 
     function mostraResposta(n, i) {
+        let errado = [...props.errou, n];
+        let quase = [...props.quase, n];
+        let certo = [...props.acertou, n];
         mostrar = [n];
         console.log(mostrar);
         setResposta(mostrar);
+        if (i % 2 != 0) {
+            props.setErrou(errado);
+            console.log(errado);
+        } else {
+            props.setQuase(certo);
+            console.log(certo);
+        }
     }
 
     return (
@@ -28,9 +38,12 @@ export default function Questions() {
                     if (!pergunta.includes(n)) {
                         return (
                             <div className="pergunta-fechada" key={i}>
-                                <p>Pergunta {i + 1}</p>
-                                <img src={play} alt="teste" onClick={() => 
-                                    mostraPergunta(n, i)} />
+                                <p className={props.errou.includes(n) ? "linha-vermelha" :
+                                    props.acertou.includes(n) ? "linha-verde" :
+                                        props.quase.includes(n) ? "linha-amarela" : ""}>
+                                    Pergunta {i + 1}
+                                </p>
+                                <img src={play} alt="teste" onClick={() => mostraPergunta(n, i)} />
                             </div>
                         )
                     } else {
