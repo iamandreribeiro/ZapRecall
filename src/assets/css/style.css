@@ -111,7 +111,21 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 19px;
-  color: #333333;
+}
+
+.linha-verde {
+  color: #2FBE34;
+  text-decoration: line-through;
+}
+
+.linha-amarela {
+  color: #FF922E;
+  text-decoration: line-through;
+}
+
+.linha-vermelha {
+  color: #FF3030;
+  text-decoration: line-through;
 }
 
 .pergunta-fechada ion-icon {

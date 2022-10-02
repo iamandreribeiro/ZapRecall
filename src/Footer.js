@@ -6,7 +6,7 @@ export default function Footer() {
                 <button className="yellow">Quase não lembrei</button>
                 <button className="green">Zap!</button>
             </div>
-            <h1>0/4 concluidos</h1>
+            <h1>0/8 concluidos</h1>
         </div>
     )
 };
