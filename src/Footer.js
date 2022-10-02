@@ -47,7 +47,7 @@ export default function Footer(props) {
         return (
             <div className="footer-concluidos">
                 <h2>🥳 Você terminou!!! 🥳</h2>
-                <h2>E obteve {hits * 100 / 800}% de aright</h2>
+                <h2>E obteve {hits * 100 / 800}% de acertos</h2>
             </div>
         )
     } else {
