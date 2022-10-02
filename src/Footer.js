@@ -1,76 +1,79 @@
 import { useState } from "react";
 
-let arrayIcones = [];
+let iconsArray = [];
 
 export default function Footer(props) {
-    const [acertos, setAcertos] = useState(0);
-    const [contador, setContador] = useState(0);
-    const [icones, setIcones] = useState([]);
+    const [hits, setHits] = useState(0);
+    const [counter, setCounter] = useState(0);
+    const [icons, setIcons] = useState([]);
 
-    function errado() {
-        const errado = [...props.errou, props.carta];
-        arrayIcones = [...icones, props.imgErro];
-        setAcertos(acertos + 0);
-        setContador(contador + 1);
-        props.setErrou(errado);
-        setIcones(arrayIcones);
-        props.setCarta([]);
-        props.setPergunta([]);
+    function wrong() {
+        const wrong = [...props.wrongAnswer, props.card];
+        iconsArray = [...icons, props.imgWrong];
+        setHits(hits + 0);
+        setCounter(counter + 1);
+        props.setWrongAnswer(wrong);
+        setIcons(iconsArray);
+        props.setCard([]);
+        props.setQuestion([]);
+        props.setLockOnClick(wrong);
     }
 
-    function quase() {
-        const quase = [...props.quase, props.carta];
-        arrayIcones = [...icones, props.imgQuase];
-        setAcertos(acertos + 50);
-        setContador(contador + 1);
-        props.setQuase(quase);
-        setIcones(arrayIcones);
-        props.setCarta([]);
-        props.setPergunta([]);
+    function medium() {
+        const medium = [...props.mediumAnswer, props.card];
+        iconsArray = [...icons, props.imgMedium];
+        setHits(hits + 50);
+        setCounter(counter + 1);
+        props.setMediumAnswer(medium);
+        setIcons(iconsArray);
+        props.setCard([]);
+        props.setQuestion([]);
+        props.setLockOnClick(medium);
     }
 
-    function certo() {
-        const certo = [...props.acertou, props.carta];
-        arrayIcones = [...icones, props.imgCerto];
-        setAcertos(acertos + 100);
-        setContador(contador + 1);
-        props.setAcertou(certo);
-        setIcones(arrayIcones);
-        props.setCarta([]);
-        props.setPergunta([]);
+    function right() {
+        const right = [...props.rightAnswer, props.card];
+        iconsArray = [...icons, props.imgRight];
+        setHits(hits + 100);
+        setCounter(counter + 1);
+        props.setRightAnswer(right);
+        setIcons(iconsArray);
+        props.setCard([]);
+        props.setQuestion([]);
+        props.setLockOnClick(right);
     }
 
-    if (contador > 7) {
+    if (counter > 7) {
         return (
             <div className="footer-concluidos">
                 <h2>🥳 Você terminou!!! 🥳</h2>
-                <h2>E obteve {acertos * 100 / 800}% de acerto</h2>
+                <h2>E obteve {hits * 100 / 800}% de aright</h2>
             </div>
         )
     } else {
         return (
             <div className="footer-concluidos">
                 <div className="container-botoes">
-                    <button disabled={contador > 7 ? true :
-                        props.carta.length !== 0 ? false : true} className="red"
-                        onClick={() => errado()}>
+                    <button disabled={counter > 7 ? true :
+                        props.card.length !== 0 ? false : true} className="red"
+                        onClick={() => wrong()}>
                         Não lembrei
                     </button>
-                    <button disabled={contador > 7 ? true :
-                        props.carta.length !== 0 ? false : true} className="yellow"
-                        onClick={() => quase()}>
-                        Quase não lembrei
+                    <button disabled={counter > 7 ? true :
+                        props.card.length !== 0 ? false : true} className="yellow"
+                        onClick={() => medium()}>
+                        medium não lembrei
                     </button>
-                    <button disabled={contador > 7 ? true :
-                        props.carta.length !== 0 ? false : true} className="green"
-                        onClick={() => certo()}>
+                    <button disabled={counter > 7 ? true :
+                        props.card.length !== 0 ? false : true} className="green"
+                        onClick={() => right()}>
                         Zap!
                     </button>
                 </div>
-                <h1>{contador}/8 concluidos</h1>
+                <h1>{counter}/8 concluidos</h1>
                 <div>
                     {
-                        arrayIcones.map((n, i) => { return <img src={n} alt="img" key={i} /> })
+                        iconsArray.map((n, i) => { return <img src={n} alt="img" key={i} /> })
                     }
                 </div>
             </div>
