@@ -62,7 +62,7 @@ export default function Footer(props) {
                     <button disabled={counter > 7 ? true :
                         props.card.length !== 0 ? false : true} className="yellow"
                         onClick={() => medium()}>
-                        medium não lembrei
+                        Quase não lembrei
                     </button>
                     <button disabled={counter > 7 ? true :
                         props.card.length !== 0 ? false : true} className="green"
