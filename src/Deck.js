@@ -8,8 +8,8 @@ const deck = [
         answer: "Dom Quixote"
     },
     {
-        question: "Qual o número mínimo de jogadores numa partida de futebol?",
-        answer: "Lenda"
+        question: "Qual o número mínimo de jogadores de um time numa partida de futebol?",
+        answer: "7 jogadores"
     },
     {
         question: " Quanto tempo a luz do Sol demora para chegar à Terra?",
