@@ -1,35 +1,35 @@
 const deck = [
     {
-        question: "O que é JSX?",
-        answer: "Uma extensão de linguagem do JavaScript"
+        question: "De quem é a famosa frase “Penso, logo existo”?",
+        answer: "René Descartes"
     },
     {
-        question: "O React é __",
-        answer: "uma biblioteca JavaScript para construção de interfaces"
+        question: "Qual o livro mais vendido no mundo a seguir à Bíblia?",
+        answer: "Dom Quixote"
     },
     {
-        question: "Componentes devem iniciar com __",
-        answer: "letra maiúscula"
+        question: "Qual o número mínimo de jogadores numa partida de futebol?",
+        answer: "Lenda"
     },
     {
-        question: "Podemos colocar __ dentro do JSX",
-        answer: "expressões"
+        question: " Quanto tempo a luz do Sol demora para chegar à Terra?",
+        answer: "8 minutos"
     },
     {
-        question: "O ReactDOM nos ajuda __",
-        answer: "interagindo com a DOM para colocar componentes React na mesma"
+        question: "Qual personagem folclórico costuma ser agradado pelos caçadores com a oferta de fumo?",
+        answer: "Caipora"
     },
     {
-        question: "Usamos o npm para __ ",
-        answer: "gerenciar os pacotes necessários e suas dependências"
+        question: "Qual a montanha mais alta do Brasil?",
+        answer: "Pico da Neblina"
     },
     {
-        question: "Usamos props para __",
-        answer: "passar diferentes informações para componentes"
+        question: "Qual o maior animal terrestre?",
+        answer: "Elefante africano"
     },
     {
-        question: "Usamos estado (state) para __",
-        answer: "dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"
+        question: "Quem foi o primeiro homem a pisar na Lua? Em que ano aconteceu?",
+        answer: "Neil Armstrong, em 1969."
     }
 ];
 
