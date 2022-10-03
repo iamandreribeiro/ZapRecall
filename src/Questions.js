@@ -53,7 +53,7 @@ export default function Questions(props) {
                                 </StyledPalavra>
                                 <img data-identifier="flashcard-show-btn"
                                     onClick={() => !props.lockOnClick.includes(n.question) ?
-                                        renderQuestion(n, i) : ""}
+                                        renderQuestion(n) : ""}
                                     src={props.wrongAnswer.includes(n.question) ? props.imgWrong :
                                         props.rightAnswer.includes(n.question) ? props.imgRight :
                                             props.mediumAnswer.includes(n.question) ? props.imgMedium :
@@ -68,7 +68,7 @@ export default function Questions(props) {
                                     {deck[i].question}
                                     <img data-identifier="flashcard-turn-btn"
                                         src={virar} alt="teste"
-                                        onClick={() => renderAnswer(n, i)} />
+                                        onClick={() => renderAnswer(n)} />
                                 </StyledAberta>
                             )
                         } else {
