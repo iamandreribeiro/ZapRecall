@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styled from "styled-components";
 
 let iconsArray = [];
 
@@ -45,38 +46,88 @@ export default function Footer(props) {
 
     if (counter > 7) {
         return (
-            <div className="footer-concluidos">
+            <StyledFooter>
                 <h2>🥳 Você terminou!!! 🥳</h2>
                 <h2>E obteve {hits * 100 / 800}% de acertos</h2>
-            </div>
+            </StyledFooter>
         )
     } else {
         return (
-            <div className="footer-concluidos">
-                <div className="container-botoes">
-                    <button disabled={counter > 7 ? true :
-                        props.card.length !== 0 ? false : true} className="red"
+            <StyledFooter>
+                <StyledContainer>
+                    <StyledButton disabled={counter > 7 ? true :
+                        props.card.length !== 0 ? false : true}
                         onClick={() => wrong()}>
                         Não lembrei
-                    </button>
-                    <button disabled={counter > 7 ? true :
-                        props.card.length !== 0 ? false : true} className="yellow"
+                    </StyledButton>
+                    <StyledButton disabled={counter > 7 ? true :
+                        props.card.length !== 0 ? false : true}
                         onClick={() => medium()}>
                         Quase não lembrei
-                    </button>
-                    <button disabled={counter > 7 ? true :
-                        props.card.length !== 0 ? false : true} className="green"
+                    </StyledButton>
+                    <StyledButton disabled={counter > 7 ? true :
+                        props.card.length !== 0 ? false : true}
                         onClick={() => right()}>
                         Zap!
-                    </button>
-                </div>
+                    </StyledButton>
+                </StyledContainer>
                 <h1>{counter}/8 concluidos</h1>
                 <div>
                     {
                         iconsArray.map((n, i) => { return <img src={n} alt="img" key={i} /> })
                     }
                 </div>
-            </div>
+            </StyledFooter>
         )
     }
 };
+
+const StyledFooter = styled.div`
+    width: 100%;
+    min-height: 50px;
+    background-color: #FFFFFF;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Recursive';
+    font-weight: 400;
+    font-size: 18px;
+    color: #333333;
+    padding: 10px;
+`
+
+const StyledContainer = styled.div`
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    margin: 20px;    
+`
+
+const StyledButton = styled.button`
+    width: 90px;
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #FFFFFF;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 5px;
+    &:nth-child(1) {
+        background: #FF3030;
+    }
+    &:nth-child(2) {
+        background: #FF922E;
+    }
+    &:nth-child(3) {
+        background: #2FBE34;
+    }
+`
