@@ -22,7 +22,7 @@ export default function App() {
             <StyledScreen>
                 <Header />
 
-                <Questions question={question} setQuestion={setQuestion} wrongAnswer={wrongAnswer}
+                <Questions data-identifier="flashcard" question={question} setQuestion={setQuestion} wrongAnswer={wrongAnswer}
                     mediumAnswer={mediumAnswer} rightAnswer={rightAnswer} card={card}
                     setCard={setCard} imgRight={imgRight} imgMedium={imgMedium}
                     imgWrong={imgWrong} lockOnClick={lockOnClick} />

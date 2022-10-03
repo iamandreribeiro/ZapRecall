@@ -55,23 +55,23 @@ export default function Footer(props) {
         return (
             <StyledFooter>
                 <StyledContainer>
-                    <StyledButton disabled={counter > 7 ? true :
+                    <StyledButton data-identifier="forgot-btn" disabled={counter > 7 ? true :
                         props.card.length !== 0 ? false : true}
                         onClick={() => wrong()}>
                         Não lembrei
                     </StyledButton>
-                    <StyledButton disabled={counter > 7 ? true :
+                    <StyledButton data-identifier="almost-forgot-btn" disabled={counter > 7 ? true :
                         props.card.length !== 0 ? false : true}
                         onClick={() => medium()}>
                         Quase não lembrei
                     </StyledButton>
-                    <StyledButton disabled={counter > 7 ? true :
+                    <StyledButton data-identifier="zap-btn" disabled={counter > 7 ? true :
                         props.card.length !== 0 ? false : true}
                         onClick={() => right()}>
                         Zap!
                     </StyledButton>
                 </StyledContainer>
-                <h1>{counter}/8 concluidos</h1>
+                <h1 data-identifier="flashcard-counter">{counter}/8 concluidos</h1>
                 <div>
                     {
                         iconsArray.map((n, i) => { return <img src={n} alt="img" key={i} /> })

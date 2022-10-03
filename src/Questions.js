@@ -30,15 +30,15 @@ export default function Questions(props) {
             {
                 deck.map((n, i) => {
                     if (!props.question.includes(n.question)) {
-                        if(props.wrongAnswer.includes(n.question)) {
+                        if (props.wrongAnswer.includes(n.question)) {
                             color = "#FF3030"
                             line = "line-through";
                         }
-                        else if(props.mediumAnswer.includes(n.question)) {
+                        else if (props.mediumAnswer.includes(n.question)) {
                             color = "#FF922E"
                             line = "line-through";
                         }
-                        else if(props.rightAnswer.includes(n.question)) {
+                        else if (props.rightAnswer.includes(n.question)) {
                             color = "#2FBE34"
                             line = "line-through";
                         }
@@ -47,12 +47,13 @@ export default function Questions(props) {
                             line = "";
                         }
                         return (
-                            <StyledFechada>
+                            <StyledFechada data-identifier="flashcard-index-item">
                                 <StyledPalavra color={color} line={line}>
                                     Pergunta {i + 1}
                                 </StyledPalavra>
-                                <img onClick={() => !props.lockOnClick.includes(n.question) ?
-                                    renderQuestion(n, i) : ""}
+                                <img data-identifier="flashcard-show-btn"
+                                    onClick={() => !props.lockOnClick.includes(n.question) ?
+                                        renderQuestion(n, i) : ""}
                                     src={props.wrongAnswer.includes(n.question) ? props.imgWrong :
                                         props.rightAnswer.includes(n.question) ? props.imgRight :
                                             props.mediumAnswer.includes(n.question) ? props.imgMedium :
@@ -63,15 +64,16 @@ export default function Questions(props) {
                     } else {
                         if (!answer.includes(n.question)) {
                             return (
-                                <StyledAberta>
+                                <StyledAberta data-identifier="flashcard-question">
                                     {deck[i].question}
-                                    <img src={virar} alt="teste"
+                                    <img data-identifier="flashcard-turn-btn"
+                                        src={virar} alt="teste"
                                         onClick={() => renderAnswer(n, i)} />
                                 </StyledAberta>
                             )
                         } else {
                             return (
-                                <StyledAberta>
+                                <StyledAberta data-identifier="flashcard-answer">
                                     {deck[i].answer}
                                 </StyledAberta>
                             )
