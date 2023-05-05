@@ -38,7 +38,7 @@ export default function App() {
 
 const StyledScreen = styled.div`
     background-color: #FB6B6B;
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
